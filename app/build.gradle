@@ -112,6 +112,11 @@ dependencies {
   implementation "com.google.accompanist:accompanist-insets:$versions.accompanistVersion"
   implementation "com.google.accompanist:accompanist-flowlayout:$versions.accompanistVersion"
 
+  // compose pager
+  implementation "com.google.accompanist:accompanist-pager:$versions.accompanistPagerVersion"
+  // compose pager indicators
+  implementation("com.google.accompanist:accompanist-pager-indicators:$versions.accompanistPagerVersion")
+
   // compose compatibles
   implementation "com.github.skydoves:orchestra-balloon:$versions.orchestraVersion"
 

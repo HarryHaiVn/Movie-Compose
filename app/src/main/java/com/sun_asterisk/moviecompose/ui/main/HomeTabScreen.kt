@@ -18,11 +18,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.navigationBarsHeight
 import com.google.accompanist.insets.navigationBarsPadding
+import com.google.accompanist.pager.ExperimentalPagerApi
 import com.sun_asterisk.moviecompose.ui.movie.MovieScreen
 import com.sun_asterisk.moviecompose.ui.people.PeopleScreen
 import com.sun_asterisk.moviecompose.ui.theme.purple200
 import com.sun_asterisk.moviecompose.ui.tv.TvScreen
 
+@ExperimentalPagerApi
 @Composable
 fun HomeTabScreen(
   viewModel: MainViewModel,

@@ -5,6 +5,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.CompositionLocalProvider
+import com.google.accompanist.pager.ExperimentalPagerApi
 import com.skydoves.landscapist.coil.LocalCoilImageLoader
 import com.sun_asterisk.moviecompose.ui.theme.MovieComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
   private val viewModel: MainViewModel by viewModels()
 
+  @ExperimentalPagerApi
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 

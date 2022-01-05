@@ -28,6 +28,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.google.accompanist.insets.ProvideWindowInsets
+import com.google.accompanist.pager.ExperimentalPagerApi
 import com.sun_asterisk.moviecompose.R
 import com.sun_asterisk.moviecompose.ui.movie.MovieDetailScreen
 import com.sun_asterisk.moviecompose.ui.navigation.NavScreen
@@ -35,6 +36,7 @@ import com.sun_asterisk.moviecompose.ui.people.PersonDetailScreen
 import com.sun_asterisk.moviecompose.ui.theme.purple200
 import com.sun_asterisk.moviecompose.ui.tv.TvDetailScreen
 
+@ExperimentalPagerApi
 @Composable
 fun MainScreen() {
   val navController = rememberNavController()
