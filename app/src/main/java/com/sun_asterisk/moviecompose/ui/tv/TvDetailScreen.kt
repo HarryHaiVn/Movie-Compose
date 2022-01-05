@@ -47,17 +47,17 @@ import com.google.accompanist.flowlayout.FlowRow
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.palette.BitmapPalette
 import com.sun_asterisk.moviecompose.R
-import com.sun_asterisk.moviecompose.models.Review
-import com.sun_asterisk.moviecompose.models.Video
-import com.sun_asterisk.moviecompose.models.entities.Tv
-import com.sun_asterisk.moviecompose.network.Api
-import com.sun_asterisk.moviecompose.network.compose.NetworkImage
+import com.sun_asterisk.moviecompose.data.models.Review
+import com.sun_asterisk.moviecompose.data.models.Video
+import com.sun_asterisk.moviecompose.data.models.entities.Tv
+import com.sun_asterisk.moviecompose.data.remote.Api
+import com.sun_asterisk.moviecompose.utils.NetworkImage
 import com.sun_asterisk.moviecompose.ui.custom.AppBarWithArrow
 import com.sun_asterisk.moviecompose.ui.custom.RatingBar
 import com.sun_asterisk.moviecompose.ui.theme.background
 import com.sun_asterisk.moviecompose.ui.theme.purple200
 import com.skydoves.whatif.whatIfNotNullOrEmpty
-import com.sun_asterisk.moviecompose.models.Keyword
+import com.sun_asterisk.moviecompose.data.models.Keyword
 
 @Composable
 fun TvDetailScreen(

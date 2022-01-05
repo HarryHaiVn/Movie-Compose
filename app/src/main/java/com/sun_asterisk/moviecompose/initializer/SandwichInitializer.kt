@@ -4,7 +4,7 @@ package com.sun_asterisk.moviecompose.initializer
 
 import android.content.Context
 import androidx.startup.Initializer
-import com.sun_asterisk.moviecompose.operator.GlobalResponseOperator
+import com.sun_asterisk.moviecompose.data.operator.GlobalResponseOperator
 import com.skydoves.sandwich.SandwichInitializer
 
 class SandwichInitializer : Initializer<Unit> {

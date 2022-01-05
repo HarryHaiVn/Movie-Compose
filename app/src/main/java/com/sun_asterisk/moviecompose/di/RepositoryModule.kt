@@ -1,16 +1,16 @@
 package com.sun_asterisk.moviecompose.di
 
-import com.sun_asterisk.moviecompose.network.service.MovieService
-import com.sun_asterisk.moviecompose.network.service.PeopleService
-import com.sun_asterisk.moviecompose.network.service.TheDiscoverService
-import com.sun_asterisk.moviecompose.network.service.TvService
-import com.sun_asterisk.moviecompose.persistence.MovieDao
-import com.sun_asterisk.moviecompose.persistence.PeopleDao
-import com.sun_asterisk.moviecompose.persistence.TvDao
-import com.sun_asterisk.moviecompose.repository.DiscoverRepository
-import com.sun_asterisk.moviecompose.repository.MovieRepository
-import com.sun_asterisk.moviecompose.repository.PeopleRepository
-import com.sun_asterisk.moviecompose.repository.TvRepository
+import com.sun_asterisk.moviecompose.data.remote.service.MovieService
+import com.sun_asterisk.moviecompose.data.remote.service.PeopleService
+import com.sun_asterisk.moviecompose.data.remote.service.TheDiscoverService
+import com.sun_asterisk.moviecompose.data.remote.service.TvService
+import com.sun_asterisk.moviecompose.data.local.MovieDao
+import com.sun_asterisk.moviecompose.data.local.PeopleDao
+import com.sun_asterisk.moviecompose.data.local.TvDao
+import com.sun_asterisk.moviecompose.data.repository.DiscoverRepository
+import com.sun_asterisk.moviecompose.data.repository.MovieRepository
+import com.sun_asterisk.moviecompose.data.repository.PeopleRepository
+import com.sun_asterisk.moviecompose.data.repository.TvRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

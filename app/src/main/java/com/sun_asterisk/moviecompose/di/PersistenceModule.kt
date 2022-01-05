@@ -2,10 +2,10 @@ package com.sun_asterisk.moviecompose.di
 
 import android.content.Context
 import androidx.room.Room
-import com.sun_asterisk.moviecompose.persistence.AppDatabase
-import com.sun_asterisk.moviecompose.persistence.MovieDao
-import com.sun_asterisk.moviecompose.persistence.PeopleDao
-import com.sun_asterisk.moviecompose.persistence.TvDao
+import com.sun_asterisk.moviecompose.data.local.AppDatabase
+import com.sun_asterisk.moviecompose.data.local.MovieDao
+import com.sun_asterisk.moviecompose.data.local.PeopleDao
+import com.sun_asterisk.moviecompose.data.local.TvDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

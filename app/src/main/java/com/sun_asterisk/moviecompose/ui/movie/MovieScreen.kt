@@ -31,11 +31,11 @@ import com.sun_asterisk.moviecompose.extensions.paging
 import com.sun_asterisk.moviecompose.mock.movie
 import com.sun_asterisk.moviecompose.mock.movie1
 import com.sun_asterisk.moviecompose.mock.movie2
-import com.sun_asterisk.moviecompose.models.entities.Movie
-import com.sun_asterisk.moviecompose.models.network.NetworkState
-import com.sun_asterisk.moviecompose.models.network.onLoading
-import com.sun_asterisk.moviecompose.network.Api
-import com.sun_asterisk.moviecompose.network.compose.NetworkImage
+import com.sun_asterisk.moviecompose.data.models.entities.Movie
+import com.sun_asterisk.moviecompose.data.models.network.NetworkState
+import com.sun_asterisk.moviecompose.data.models.network.onLoading
+import com.sun_asterisk.moviecompose.data.remote.Api
+import com.sun_asterisk.moviecompose.utils.NetworkImage
 import com.sun_asterisk.moviecompose.ui.main.MainScreenHomeTab
 import com.sun_asterisk.moviecompose.ui.main.MainViewModel
 import com.sun_asterisk.moviecompose.ui.theme.MovieComposeTheme
@@ -50,9 +50,32 @@ fun MovieScreen(
     modifier: Modifier = Modifier
 ) {
     val networkState: NetworkState by viewModel.movieLoadingState
-    val movies by viewModel.movies
     Column {
         MovieBanner()
+        MoviePlayingList(this, selectPoster, lazyListState, modifier, viewModel)
+    }
+    networkState.onLoading {
+        Box(
+            modifier = Modifier.fillMaxSize()
+        ) {
+
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center)
+            )
+        }
+    }
+}
+
+@Composable
+fun MoviePlayingList(
+    columnScope: ColumnScope,
+    selectPoster: (MainScreenHomeTab, Long) -> Unit,
+    lazyListState: LazyListState,
+    modifier: Modifier,
+    viewModel: MainViewModel
+) {
+    val movies by viewModel.movies
+    columnScope.apply {
         Text(
             text = "Phim đang chiếu",
             color = white87,
@@ -75,28 +98,17 @@ fun MovieScreen(
                 currentIndexFlow = viewModel.moviePageStateFlow,
                 fetch = { viewModel.fetchNextMoviePage() }
             ) {
-                MoviePlayingList(
+                MoviePlayingItem(
                     movie = it,
                     selectPoster = selectPoster
                 )
-//            MovieListDivider()
             }
-        }
-    }
-    networkState.onLoading {
-        Box(
-            modifier = Modifier.fillMaxSize()
-        ) {
-
-            CircularProgressIndicator(
-                modifier = Modifier.align(Alignment.Center)
-            )
         }
     }
 }
 
 /**
- * Full-width divider with padding for [MoviePlayingList]
+ * Full-width divider with padding for [MoviePlayingItem]
  */
 @Composable
 private fun MovieListDivider() {
@@ -112,9 +124,14 @@ fun MovieBanner() {
     val listUrl = listOf(
         "https://arealnews.com/wp-content/uploads/2021/11/Spiderman-No-Way-Home-Wiki.jpg",
         "https://www.elpozo-king.com/hubfs/spiderman-way-home-fecha-estreno-1.jpeg",
-        "https://arealnews.com/wp-content/uploads/2021/11/Spiderman-No-Way-Home-Wiki.jpg"
+        "https://arealnews.com/wp-content/uploads/2021/11/Spiderman-No-Way-Home-Wiki.jpg",
+        "https://www.elpozo-king.com/hubfs/spiderman-way-home-fecha-estreno-1.jpeg"
     )
-    ConstraintLayout(Modifier.fillMaxWidth().height(200.dp)) {
+    ConstraintLayout(
+        Modifier
+            .fillMaxWidth()
+            .height(200.dp)
+    ) {
         val (banner, indicator) = createRefs()
         val pagerState = rememberPagerState()
         HorizontalPager(
@@ -126,18 +143,19 @@ fun MovieBanner() {
             }
         ) { page ->
             // Our page content
-            NetworkImage(
-                networkUrl = listUrl[page],
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(200.dp)
-            )
-
+            Card(modifier = Modifier.padding(20.dp)) {
+                NetworkImage(
+                    networkUrl = listUrl[page],
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(180.dp)
+                )
+            }
         }
         HorizontalPagerIndicator(
             pagerState = pagerState,
             modifier = Modifier
-                .padding(16.dp)
+                .padding(30.dp)
                 .constrainAs(indicator) {
                     bottom.linkTo(parent.bottom)
                     start.linkTo(parent.start)
@@ -149,7 +167,7 @@ fun MovieBanner() {
 }
 
 @Composable
-fun MoviePlayingList(
+fun MoviePlayingItem(
     movie: Movie,
     selectPoster: (MainScreenHomeTab, Long) -> Unit,
     modifier: Modifier = Modifier
@@ -236,7 +254,7 @@ fun PreviewMoviePosterCard(
 ) {
     MovieComposeTheme {
         Surface {
-            MoviePlayingList(movie, { _, _ ->
+            MoviePlayingItem(movie, { _, _ ->
             }, modifier = Modifier)
         }
     }

@@ -1,6 +1,6 @@
 package com.sun_asterisk.moviecompose.mock
 
-import com.sun_asterisk.moviecompose.models.entities.Movie
+import com.sun_asterisk.moviecompose.data.models.entities.Movie
 
 //
 //import com.example.jetnews.R

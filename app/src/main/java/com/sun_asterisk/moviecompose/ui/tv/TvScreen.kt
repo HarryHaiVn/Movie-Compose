@@ -33,11 +33,11 @@ import androidx.palette.graphics.Palette
 import com.google.accompanist.insets.statusBarsPadding
 import com.skydoves.landscapist.palette.BitmapPalette
 import com.sun_asterisk.moviecompose.extensions.paging
-import com.sun_asterisk.moviecompose.models.entities.Tv
-import com.sun_asterisk.moviecompose.models.network.NetworkState
-import com.sun_asterisk.moviecompose.models.network.onLoading
-import com.sun_asterisk.moviecompose.network.Api
-import com.sun_asterisk.moviecompose.network.compose.NetworkImage
+import com.sun_asterisk.moviecompose.data.models.entities.Tv
+import com.sun_asterisk.moviecompose.data.models.network.NetworkState
+import com.sun_asterisk.moviecompose.data.models.network.onLoading
+import com.sun_asterisk.moviecompose.data.remote.Api
+import com.sun_asterisk.moviecompose.utils.NetworkImage
 import com.sun_asterisk.moviecompose.ui.main.MainScreenHomeTab
 import com.sun_asterisk.moviecompose.ui.main.MainViewModel
 

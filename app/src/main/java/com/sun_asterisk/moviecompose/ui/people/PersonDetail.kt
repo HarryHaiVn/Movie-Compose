@@ -28,8 +28,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.flowlayout.FlowRow
-import com.sun_asterisk.moviecompose.network.Api
-import com.sun_asterisk.moviecompose.network.compose.NetworkImage
+import com.sun_asterisk.moviecompose.data.remote.Api
+import com.sun_asterisk.moviecompose.utils.NetworkImage
 import com.sun_asterisk.moviecompose.ui.custom.AppBarWithArrow
 import com.sun_asterisk.moviecompose.ui.theme.background
 import com.sun_asterisk.moviecompose.ui.theme.background800

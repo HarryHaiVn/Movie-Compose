@@ -2,7 +2,7 @@ package com.sun_asterisk.moviecompose.ui.tv
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sun_asterisk.moviecompose.repository.TvRepository
+import com.sun_asterisk.moviecompose.data.repository.TvRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharingStarted

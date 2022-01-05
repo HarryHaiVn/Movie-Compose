@@ -2,8 +2,8 @@ package com.sun_asterisk.moviecompose.ui.people
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sun_asterisk.moviecompose.models.network.PersonDetail
-import com.sun_asterisk.moviecompose.repository.PeopleRepository
+import com.sun_asterisk.moviecompose.data.models.network.PersonDetail
+import com.sun_asterisk.moviecompose.data.repository.PeopleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow

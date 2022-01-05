@@ -2,12 +2,12 @@ package com.sun_asterisk.moviecompose.di
 
 import android.content.Context
 import coil.ImageLoader
-import com.sun_asterisk.moviecompose.network.Api
-import com.sun_asterisk.moviecompose.network.RequestInterceptor
-import com.sun_asterisk.moviecompose.network.service.MovieService
-import com.sun_asterisk.moviecompose.network.service.PeopleService
-import com.sun_asterisk.moviecompose.network.service.TheDiscoverService
-import com.sun_asterisk.moviecompose.network.service.TvService
+import com.sun_asterisk.moviecompose.data.remote.Api
+import com.sun_asterisk.moviecompose.data.remote.RequestInterceptor
+import com.sun_asterisk.moviecompose.data.remote.service.MovieService
+import com.sun_asterisk.moviecompose.data.remote.service.PeopleService
+import com.sun_asterisk.moviecompose.data.remote.service.TheDiscoverService
+import com.sun_asterisk.moviecompose.data.remote.service.TvService
 import com.skydoves.sandwich.coroutines.CoroutinesResponseCallAdapterFactory
 import dagger.Module
 import dagger.Provides
