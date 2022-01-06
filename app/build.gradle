@@ -143,7 +143,8 @@ dependencies {
   kaptAndroidTest "com.google.dagger:hilt-compiler:$versions.hiltCoreVersion"
 
   // network
-  implementation "com.github.skydoves:sandwich:$versions.sandwichVersion"
+  // implementation "com.github.skydoves:sandwich:$versions.sandwichVersion"
+  implementation project(":sandwich")
   implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttpVersion"
   implementation "com.squareup.retrofit2:converter-gson:$versions.retrofitVersion"
   testImplementation "com.squareup.okhttp3:mockwebserver:$versions.okhttpVersion"

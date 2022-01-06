@@ -46,10 +46,10 @@ ext.versions = [
     // network
     retrofitVersion      : '2.9.0',
     okhttpVersion        : '4.7.2',
-    sandwichVersion      : '1.2.1',
-
+    sandwichVersion      : '1.2.2',
+    androidxAppcompat: '1.4.0',
     // coroutines
-    coroutinesVersion    : '1.4.1',
+    coroutinesVersion    : '1.6.0',
 
     // whatIf
     whatIfVersion        : '1.1.0',
