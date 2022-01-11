@@ -1,5 +1,6 @@
 package com.sun_asterisk.moviecompose.ui.movie
 
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
@@ -33,7 +34,9 @@ import com.sun_asterisk.moviecompose.mock.movie1
 import com.sun_asterisk.moviecompose.mock.movie2
 import com.sun_asterisk.moviecompose.data.models.entities.Movie
 import com.sun_asterisk.moviecompose.data.models.network.NetworkState
+import com.sun_asterisk.moviecompose.data.models.network.onError
 import com.sun_asterisk.moviecompose.data.models.network.onLoading
+import com.sun_asterisk.moviecompose.data.models.network.onSuccess
 import com.sun_asterisk.moviecompose.data.remote.Api
 import com.sun_asterisk.moviecompose.utils.NetworkImage
 import com.sun_asterisk.moviecompose.ui.main.MainScreenHomeTab
@@ -54,6 +57,7 @@ fun MovieScreen(
         MovieBanner()
         MoviePlayingList(this, selectPoster, lazyListState, modifier, viewModel)
     }
+
     networkState.onLoading {
         Box(
             modifier = Modifier.fillMaxSize()
@@ -63,6 +67,14 @@ fun MovieScreen(
                 modifier = Modifier.align(Alignment.Center)
             )
         }
+    }
+
+    networkState.onSuccess {
+        Log.e("hai","onSuccess");
+    }
+
+    networkState.onError {
+        Log.e("hai","onError");
     }
 }
 

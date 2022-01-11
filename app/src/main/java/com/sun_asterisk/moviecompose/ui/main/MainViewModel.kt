@@ -10,6 +10,7 @@ import com.sun_asterisk.moviecompose.data.models.entities.Movie
 import com.sun_asterisk.moviecompose.data.models.entities.Person
 import com.sun_asterisk.moviecompose.data.models.entities.Tv
 import com.sun_asterisk.moviecompose.data.models.network.NetworkState
+import com.sun_asterisk.moviecompose.data.remote.Api.PAGER_INIT
 import com.sun_asterisk.moviecompose.data.repository.DiscoverRepository
 import com.sun_asterisk.moviecompose.data.repository.PeopleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -36,8 +37,9 @@ class MainViewModel @Inject constructor(
     private val _movieLoadingState: MutableState<NetworkState> = mutableStateOf(NetworkState.IDLE)
     val movieLoadingState: State<NetworkState> get() = _movieLoadingState
 
+    /*Movie*/
     val movies: State<MutableList<Movie>> = mutableStateOf(mutableListOf())
-    val moviePageStateFlow: MutableStateFlow<Int> = MutableStateFlow(1)
+    val moviePageStateFlow: MutableStateFlow<Int> = MutableStateFlow(PAGER_INIT)
     private val newMovieFlow = moviePageStateFlow.flatMapLatest {
         _movieLoadingState.value = NetworkState.LOADING
         discoverRepository.loadMovies(
@@ -47,11 +49,12 @@ class MainViewModel @Inject constructor(
         )
     }.shareIn(viewModelScope, SharingStarted.WhileSubscribed(), replay = 1)
 
+    /*Tv*/
     private val _tvLoadingState: MutableState<NetworkState> = mutableStateOf(NetworkState.IDLE)
     val tvLoadingState: State<NetworkState> get() = _tvLoadingState
 
     val tvs: State<MutableList<Tv>> = mutableStateOf(mutableListOf())
-    val tvPageStateFlow: MutableStateFlow<Int> = MutableStateFlow(1)
+    val tvPageStateFlow: MutableStateFlow<Int> = MutableStateFlow(PAGER_INIT)
     private val newTvFlow = tvPageStateFlow.flatMapLatest {
         _tvLoadingState.value = NetworkState.LOADING
         discoverRepository.loadTvs(
@@ -61,11 +64,12 @@ class MainViewModel @Inject constructor(
         )
     }.shareIn(viewModelScope, SharingStarted.WhileSubscribed(), replay = 1)
 
+    /*Person*/
     private val _personLoadingState: MutableState<NetworkState> = mutableStateOf(NetworkState.IDLE)
     val personLoadingState: State<NetworkState> get() = _personLoadingState
 
     val people: State<MutableList<Person>> = mutableStateOf(mutableListOf())
-    val peoplePageStateFlow: MutableStateFlow<Int> = MutableStateFlow(1)
+    val peoplePageStateFlow: MutableStateFlow<Int> = MutableStateFlow(PAGER_INIT)
     private val newPeople = peoplePageStateFlow.flatMapLatest {
         _personLoadingState.value = NetworkState.LOADING
         peopleRepository.loadPeople(

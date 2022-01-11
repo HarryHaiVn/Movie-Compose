@@ -24,3 +24,11 @@ fun NetworkState.onLoading(block: @Composable () -> Unit): NetworkState {
   }
   return this
 }
+
+@Composable
+fun NetworkState.onError(block: @Composable () -> Unit): NetworkState {
+  if (this == NetworkState.ERROR) {
+    block()
+  }
+  return this
+}

@@ -7,6 +7,7 @@ object Api {
   private const val YOUTUBE_VIDEO_URL = "https://www.youtube.com/watch?v="
   private const val YOUTUBE_THUMBNAIL_URL = "https://img.youtube.com/vi/"
   const val PAGING_SIZE = 20
+  const val PAGER_INIT = 1
 
   @JvmStatic
   fun getPosterPath(posterPath: String?): String {
